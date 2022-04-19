@@ -1,0 +1,13 @@
+#makePacman {
+  position: relative;
+  padding: 20px;
+  margin: 50px;
+  z-index: 20;
+}
+
+#startBtn {
+  position: relative;
+  padding: 20px;
+  margin: 50px;
+  z-index: 20;
+}
