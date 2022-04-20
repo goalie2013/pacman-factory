@@ -1,13 +1,90 @@
-#makePacman {
-  position: relative;
+.body {
+  background-color: rgb(202, 225, 245);
+  height: 100%;
+}
+
+#container {
+  font-family: "Roboto Mono";
+}
+
+.title {
+  font-size: 4rem;
   padding: 20px;
-  margin: 50px;
+  text-align: center;
+  z-index: 20;
+}
+
+.btn-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+}
+
+.btn {
+  position: relative;
+  text-transform: uppercase;
+}
+#makePacmanBtn {
+  padding: 20px;
+  margin: 30px;
   z-index: 20;
 }
 
 #startBtn {
+  border: 1px solid white;
   position: relative;
   padding: 20px;
-  margin: 50px;
   z-index: 20;
+  margin: 30px;
+}
+
+#stopBtn {
+  border: 1px solid white;
+  position: relative;
+  padding: 20px;
+  z-index: 20;
+  margin: 30px;
+}
+
+/* Media Queries */
+
+/* Phone & Tablet Vertical */
+@media (max-width: 618px) {
+  .title {
+    font-size: 2.5rem;
+  }
+  .btn-container {
+    display: flex;
+    flex-direction: row;
+    /* justify-content: flex-start; */
+  }
+  #makePacmanBtn {
+    padding: 6px;
+    margin: 15px;
+    width: 50%;
+    align-self: center;
+    font-size: 0.9rem;
+  }
+
+  #startBtn {
+    padding: 5px;
+    margin: 15px;
+    width: 50%;
+    align-self: center;
+  }
+
+  #stopBtn {
+    padding: 5px;
+    margin: 15px;
+    width: 50%;
+    align-self: center;
+  }
+}
+
+@media (max-width: 800px) {
+  .btn-container {
+    display: flex;
+    flex-direction: row;
+    /* justify-content: flex-start; */
+  }
 }

@@ -8,8 +8,11 @@ const pacArray = [
   ["PacMan3.png", "PacMan4.png"],
 ];
 
-let factoryBtn = document.getElementById("makePacman");
-let startBtn = document.getElementById("startBtn");
+let container = document.querySelector(".pacmen");
+
+const factoryBtn = document.getElementById("makePacmanBtn");
+const startBtn = document.getElementById("startBtn");
+const stopBtn = document.getElementById("stopBtn");
 
 factoryBtn.addEventListener("click", () => {
   const pacmanObj = _pacmanFactory();
@@ -17,11 +20,12 @@ factoryBtn.addEventListener("click", () => {
   pacMen.push(pacmanObj);
 });
 
-// startBtn.addEventListener("click", _run);
 startBtn.addEventListener("click", () => {
   clearTimeout(interval);
   _run();
 });
+
+stopBtn.addEventListener("click", _clearScreen);
 
 // randomly set x & y values for velocity & position
 // Number -> Object
@@ -39,8 +43,7 @@ function _pacmanFactory() {
   let currPic = 0;
 
   let velocity = _setToRandom(20); // Ex: {x: 3, y: 8}
-  let position = _setToRandom(200);
-  let container = document.getElementById("container");
+  let position = _setToRandom(300);
   let img = document.createElement("img");
 
   img.src = "./images/PacMan1.png";
@@ -49,6 +52,7 @@ function _pacmanFactory() {
   img.style.top = position.y + "px";
   img.style.position = "absolute";
   img.style.zIndex = "1";
+  img.style.width = "12vh";
   container.appendChild(img);
 
   // return an Object that represents a pacman
@@ -112,6 +116,21 @@ const _updateImg = (elem) => {
   elem.currPic = (elem.currPic + 1) % 2;
   elem.img.src = `./images/${pacArray[elem.direction][elem.currPic]}`;
 };
+
+function _clearScreen() {
+  // stop run()
+  clearTimeout(interval);
+
+  // empty pacMen Array
+  for (let i = pacMen.length - 1; i >= 0; i--) {
+    pacMen.pop();
+  }
+
+  // Clear Screen
+  while (container.firstChild) {
+    container.removeChild(container.firstChild);
+  }
+}
 
 // if (typeof module !== "undefined") {
 //   module.exports = { checkCollisions, run, pacMen };
