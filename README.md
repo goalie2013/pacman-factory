@@ -9,5 +9,11 @@ This activity is a good practice for understanding Object Creation using the
  
  Checking for boundary collisions was a good exercise in JavaScript Objects.
  
+ Additionally, I added:
+- Google Fonts
+- Flexbox
+- Media Queries
+- Bootstrap
+ 
  
  ## Check out the Live Project here: https://goalie2013.github.io/pacman-factory/
