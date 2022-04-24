@@ -52,7 +52,8 @@ function _pacmanFactory() {
   img.style.top = position.y + "px";
   img.style.position = "absolute";
   img.style.zIndex = "1";
-  img.style.width = "12vh";
+  img.style.width = "10vw";
+  img.style.height = "10vh";
   container.appendChild(img);
 
   // return an Object that represents a pacman
